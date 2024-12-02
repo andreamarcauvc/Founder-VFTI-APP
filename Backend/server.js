@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
-const port = process.env.PORT || 3000;
+
+const port = process.env.PORT || 3000; // Use the PORT provided by Render
 
 // Middleware to parse JSON bodies and serve static files
 app.use(bodyParser.json());
@@ -24,7 +25,7 @@ app.post("/submit", (req, res) => {
   res.json({ result: "success" });
 });
 
-// Start the server
+// Start the server using the appropriate port
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
